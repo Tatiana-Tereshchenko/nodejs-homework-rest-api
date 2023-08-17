@@ -3,7 +3,7 @@ const {HttpError,  ctrlWrapper } = require("../helpers");
 
 
 
-const getAll = async (req, res) => {
+const getAll = async ( res) => {
     const contactList = await Contact.find();
     res.status(200).json(contactList);
 };
