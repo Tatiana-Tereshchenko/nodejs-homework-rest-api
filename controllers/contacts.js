@@ -5,7 +5,7 @@ const {HttpError,  ctrlWrapper } = require("../helpers");
 
 const getAll = async (req, res) => {
   const { _id: owner } = req.user;
-  const { page = 18, limit = 20 } = req.query;
+  const { page = 10, limit = 20 } = req.query;
   const skip = (page - 1) * limit;
     const contactList = await Contact.find({owner}, "-createdAt -updatedAt", {skip, limit});
     res.status(200).json(contactList);
